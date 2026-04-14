@@ -32,10 +32,9 @@ The project demonstrates how architectural modifications and training strategies
 ├── outputs/
 │   ├── predictions/
 │   ├── visualizations/
-├── zip/
-│   ├── uncleaned_dataset/
-│   ├── ISBI2016_ISIC_Part1_Training.zip
-|   ├── ISBI2016_ISIC_Part1_Training_GroundTruth.zip
+├── Raw_dataset/
+│   ├── ISBI2016_ISIC_Part1_Training_Data/
+|   ├── ISBI2016_ISIC_Part1_Training_GroundTruth/
 └── README.md
 ```
 
@@ -66,9 +65,9 @@ The project demonstrates how architectural modifications and training strategies
 
 | Model Version               | Dice Score       | IoU Score        |
 | --------------------------- | ---------------- | ---------------- |
-| Basic U-Net                 | ~0.75            | ~0.65            |
-| U-Net + Augmentation + Loss | ~0.80            | ~0.70            |
-| Attention U-Net + Grad-CAM  | ~0.82 (expected) | ~0.72 (expected) |
+| Basic U-Net                 | ~0.75            | ~0.62            |
+| U-Net + Augmentation + Loss | ~0.8559          | ~0.7554          |
+| Attention U-Net + Grad-CAM  | ~0.8636          | ~0.7643          |
 
 ---
 
@@ -83,10 +82,10 @@ Grad-CAM is used to highlight important regions in the input image that influenc
 ### ▶️ Running on Google Colab (Recommended)
 
 * Open the notebooks directly in Google Colab
-* Upload or mount dataset
+* Upload or mount zip files and update the zip_path and zip_path2 in the 2nd code cell.
 * Run all cells
 
-### 💻 Running Locally
+### 💻 Running Locally.............. to be updated
 
 * Install required libraries:
 
@@ -111,21 +110,6 @@ Grad-CAM is used to highlight important regions in the input image that influenc
 
 ---
 
-## 🎯 Key Contributions
-
-* Implementation of multiple U-Net variants
-* Integration of hybrid loss for improved segmentation
-* Use of Grad-CAM for explainability
-* Comparative analysis of model performance
-
----
-
 ## 📌 Conclusion
 
 This project demonstrates how progressive improvements in architecture and training strategies can significantly enhance segmentation performance, while also improving model interpretability.
-
----
-
-## 📎 Note
-
-The notebooks are designed to run on Google Colab by default. If running locally, make sure to update dataset paths accordingly.
