@@ -81,18 +81,89 @@ Grad-CAM is used to highlight important regions in the input image that influenc
 
 ### ▶️ Running on Google Colab (Recommended)
 
-* Open the notebooks directly in Google Colab
-* Upload or mount zip files and update the zip_path and zip_path2 in the 2nd code cell.
-* Run all cells
+1. Download the dataset ZIP files (not included in this repository due to size constraints ~600MB+).
 
-### 💻 Running Locally.............. to be updated
+2. Open the notebook in Google Colab.
 
-* Install required libraries:
+3. Upload or mount the ZIP files (e.g., via Google Drive).
 
-  ```
-  pip install torch torchvision albumentations opencv-python matplotlib
-  ```
-* Update dataset paths in the notebook before running
+4. Update the following variables in the preprocessing cell:
+
+   ```python
+   zip_path = "path_to_images_zip"
+   zip_path2 = "path_to_masks_zip"
+   ```
+
+5. Run all cells sequentially.
+
+---
+
+### 💻 Running Locally
+
+#### 📁 Step 1: Set Working Directory
+
+Ensure your current working directory is:
+
+```
+project_root/notebooks/
+```
+
+---
+
+#### 📦 Step 2: Install Dependencies
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+#### ▶️ Step 3: Run Notebook
+
+* Skip the **first 3 cells** (used for Colab setup)
+* Start execution from the dataset preprocessing cell
+
+---
+
+#### 🔧 Step 4: Update Dataset Paths
+
+In the preprocessing cell, switch from Colab paths to local paths:
+
+👉 Uncomment these:
+
+```python
+RAW_IMG_DIR = "../Raw_Dataset/ISBI2016_ISIC_Part1_Training_Data"
+RAW_MASK_DIR = "../Raw_Dataset/ISBI2016_ISIC_Part1_Training_GroundTruth"
+
+NEW_IMG_DIR = "../dataset/images"
+NEW_MASK_DIR = "../dataset/masks"
+```
+
+👉 Comment out these:
+
+```python
+RAW_IMG_DIR = "/content/unzip/ISBI2016_ISIC_Part1_Training_Data"
+RAW_MASK_DIR = "/content/unzip/ISBI2016_ISIC_Part1_Training_GroundTruth"
+
+NEW_IMG_DIR = "/content/dataset/images"
+NEW_MASK_DIR = "/content/dataset/masks"
+```
+
+---
+
+#### ▶️ Step 5: Run Remaining Cells
+
+* Execute the preprocessing cell to organize dataset
+* Then run the rest of the notebook normally
+
+---
+
+## 📌 Notes
+
+* The notebooks are configured for Google Colab by default.
+* Local execution requires manual path adjustment as described above.
+* Ensure the dataset folder structure is consistent before training.
+
 
 ---
 
