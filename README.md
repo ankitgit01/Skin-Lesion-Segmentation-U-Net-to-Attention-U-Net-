@@ -32,6 +32,10 @@ The project demonstrates how architectural modifications and training strategies
 ├── outputs/
 │   ├── predictions/
 │   ├── visualizations/
+├── zip/
+│   ├── uncleaned_dataset/
+│   ├── ISBI2016_ISIC_Part1_Training.zip
+|   ├── ISBI2016_ISIC_Part1_Training_GroundTruth.zip
 └── README.md
 ```
 
